@@ -1,7 +1,7 @@
 # Effekt Neovim
 
 Configuration files for using the Effekt language in Neovim (and partly for Vim).
-There are syntax, indentation and filetype files (which should also work for Vim) as well as configuration files for using the Effekt Language Server with `nvim-lspconfig.
+There are syntax, indentation and filetype files (which should also work for Vim) as well as configuration files for using the Effekt Language Server with `nvim-lspconfig`.
 The latter can probably be adapted easily to other LSP plugins.
 
 ## Installation
@@ -21,6 +21,6 @@ The only additional thing to do is to add the following line to the `on_attach`-
 client.server_capabilities.textDocumentSync.save.includeText=true
 ```
 
-A small example configuration that also contains some keybindings is in `init.vim`
+A small example configuration that also contains some keybindings is in [init.vim](./init.vim).
 
 With this setup the server should start when an Effekt file is opened.
