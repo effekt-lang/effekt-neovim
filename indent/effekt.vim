@@ -2,7 +2,9 @@
 " Language:             Effekt (http://effekt-lang.org/)
 " Maintainer:           Marius Müller
 " URL:                  https://github.com/effekt-lang/effekt-neovim
+" License:              Same as Vim
 " Last Change:          27 January 2023
+" ----------------------------------------------------------------------------
 
 if exists("b:did_indent")
   finish
@@ -20,9 +22,8 @@ let s:keepcpo= &cpo
 set cpo&vim
 
 let s:annotationMatcher = '@[A-Za-z._]\+\s\+'
-let s:modifierMatcher = s:annotationMatcher . '\|\%(private\|protected\)\%(\[[^\]]*\]\)\?\s\+\|abstract\s\+\|override\s\+\|final\s\+'
-let s:defMatcher = '\%(' . s:modifierMatcher . '\)*\<def\>'
-let s:valMatcher = '\%(' . s:modifierMatcher . '\|lazy\s\+\)*\<va[lr]\>'
+let s:defMatcher = '\%(' . s:annotationMatcher . '\)*\<def\>'
+let s:valMatcher = '\%(' . s:annotationMatcher . '\)*\<va[lr]\>'
 let s:funcNameMatcher = '\w\+'
 let s:typeSpecMatcher = '\%(\s*\[\_[^\]]*\]\)'
 let s:defArgMatcher = '\%((\_.\{-})\)'
