@@ -104,10 +104,10 @@ hi def link effektExternal Include
 
 
 " Comments
-"syn region effektMultilineComment start="/\*" end="\*/" contains=effektMultilineComment,effektTodo,@Spell keepend fold
+syn region effektMultilineComment start="/\*" end="\*/" contains=effektMultilineComment,effektTodo,@Spell keepend fold
 syn match effektSinglelineComment "//.*$" contains=effektTodo,@Spell
 syn match effektTodo "\vTODO|FIXME|XXX" contained
-"hi def link effektMultilineComment Comment
+hi def link effektMultilineComment Comment
 hi def link effektTodo Todo
 hi def link effektSinglelineComment Comment
 
