@@ -1,16 +1,17 @@
+---@brief
+---
+--- https://github.com/effekt-lang/effekt
+---
+--- Effekt Language Server
+
 local util = require 'lspconfig.util'
 
+---@type vim.lsp.Config
 return {
-  default_config = {
-    cmd = { 'effekt.sh', '--server' },
-    filetypes = { 'effekt' },
-    root_dir = util.root_pattern('*.effekt'),
-  },
-  docs = {
-    description = [[
-https://github.com/effekt-lang/effekt
-
-The Effekt language server.
-]],
-  },
+  cmd = { 'effekt.sh', '--server' },
+  filetypes = { 'effekt' },
+  root_dir = function(bufnr, on_dir)
+    local fname = vim.api.nvim_buf_get_name(bufnr)
+    on_dir(util.root_pattern('*.effekt')(fname))
+  end,
 }

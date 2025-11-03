@@ -10,17 +10,12 @@ The [syntax](./syntax/effekt.vim), [indentation](./indent/effekt.vim) and [filet
 For example, if you use the standard directory for neovim on Linux, copy the directories `syntax` and `indent` and the file `filetype.vim` to `~/.config/nvim/`.
 
 ### Language Server
-For the language server we use `nvim-lspconfig` but the configuration is not too difficult and can likely be adapted for other plugins without too much work.
+The language setup has been tested with `nvim-lspconfig` but the configuration is not too difficult and can likely be adapted for other settings without too much work.
 
-Make sure that the `effekt` binary is in your path as the server is started by executing the `effekt` binary with the `--server` option.
-Then simply copy the file `effektls.lua` to the `nvim-lspconfig` directory under `nvim-lspconfig/lua/lspconfig/server_configurations/`.
-The server can then be set up in `init.vim` almost as any other server.
-The only additional thing to do is to add the following line to the `on_attach`-options:
+Make sure that `effekt.sh` is in your path as the server is started by executing `effekt.sh` (which calls the `effekt` binary) with the `--server` option.
+Then simply copy the file `effektls.lua` to the `nvim-lspconfig` directory under `nvim-lspconfig/lsp`.
+The server can be set up in `init.vim` just as any other server.
 
-```
-client.server_capabilities.textDocumentSync.save.includeText=true
-```
-
-A small example configuration that also contains some keybindings is in [init.vim](./init.vim).
+A small example configuration that also contains some key bindings is in [init.vim](./init.vim).
 
 With this setup the server should start when an Effekt file is opened.
