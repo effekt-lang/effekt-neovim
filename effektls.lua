@@ -8,7 +8,7 @@ local util = require 'lspconfig.util'
 
 ---@type vim.lsp.Config
 return {
-  cmd = { 'effekt.sh', '--server' },
+  cmd = { 'effekt', '--server' },
   filetypes = { 'effekt' },
   root_dir = function(bufnr, on_dir)
     local fname = vim.api.nvim_buf_get_name(bufnr)

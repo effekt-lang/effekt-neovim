@@ -12,7 +12,7 @@ For example, if you use the standard directory for neovim on Linux, copy the dir
 ### Language Server
 The language setup has been tested with `nvim-lspconfig` but the configuration is not too difficult and can likely be adapted for other settings without too much work.
 
-Make sure that `effekt.sh` is in your path as the server is started by executing `effekt.sh` (which calls the `effekt` binary) with the `--server` option.
+Make sure that the `effekt` binary is in your path as the server is started by executing `effekt` with the `--server` option.
 Then simply copy the file `effektls.lua` to the `nvim-lspconfig` directory under `nvim-lspconfig/lsp`.
 The server can be set up in `init.vim` just as any other server.
 
